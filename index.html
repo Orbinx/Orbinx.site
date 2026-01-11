@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar navbar-main">
         <div class="navbar-content">
             <div class="navbar-brand">
                 <img src="assets/orbinxlogo.png" alt="Orbinx Logo" class="navbar-logo">
@@ -24,6 +24,17 @@
                     </svg>
                     GitHub
                 </a>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-secondary">
+        <div class="navbar-content">
+            <div class="navbar-links">
+                <a href="#" class="navbar-item">Projects</a>
+                <a href="#" class="navbar-item">About</a>
+                <a href="#" class="navbar-item">Contact</a>
+                <a href="#" class="navbar-item">FAQ</a>
             </div>
         </div>
     </nav>
@@ -42,7 +53,7 @@
     </div>
 
     <div class="hero-description">
-        From the community, by the community
+        From the community, for the community
     </div>
 
     <div class="projects-container" id="projectsContainer"></div>
@@ -139,12 +150,60 @@
             if (filter === 'all') {
                 renderProjects(projects);
             } else {
-                const filtered = projects.filter(p => p.category === filter);
+                const filtered = projects.filter(p => 
+                    Array.isArray(p.category) ? p.category.includes(filter) : p.category === filter
+                );
                 renderProjects(filtered);
             }
         }
 
         renderProjects(projects);
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            /* Fix for multiple navbars */
+            .navbar-main {
+                top: 20px;
+            }
+            
+            .navbar-secondary {
+                top: 100px; /* Adjust based on main navbar height + spacing */
+                animation-delay: 0.5s; /* Stagger the glow animation */
+            }
+            
+            .navbar-secondary .navbar-item {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            
+            /* Adjust body padding to prevent content hiding under navbars */
+            body {
+                padding-top: 160px !important;
+            }
+            
+            /* Adjust section-header margin when using navbars */
+            .section-header {
+                margin-top: 20px !important;
+            }
+            
+            @media (max-width: 768px) {
+                .navbar-main, .navbar-secondary {
+                    left: 10px;
+                    right: 10px;
+                    transform: none;
+                    padding: 16px 20px;
+                }
+                
+                .navbar-secondary {
+                    top: 90px;
+                }
+                
+                body {
+                    padding-top: 180px !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
