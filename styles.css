@@ -89,6 +89,7 @@ body {
     width: 32px;
     height: 32px;
     margin-right: 8px;
+    border-radius: 6px;
 }
 
 .navbar-brand-text {
@@ -147,6 +148,13 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    position: relative;
+    display: inline-block;
+}
+
+/* FIXED: Remove the green underline/thing */
+.tutorial-title::after {
+    display: none; /* Remove any underline */
 }
 
 .tutorial-subtitle {
@@ -171,34 +179,50 @@ body {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
+    padding: 8px 16px;
+    background: rgba(45, 212, 191, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(45, 212, 191, 0.2);
 }
 
 /* Prerequisites Section */
 .prerequisites-section {
     margin-bottom: var(--spacing-4xl);
+    padding: var(--spacing-2xl);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
 }
 
 .prerequisites-section h2 {
     color: var(--color-text-primary);
     margin-bottom: var(--spacing-lg);
     font-size: 2rem;
+    position: relative;
+    padding-bottom: var(--spacing-md);
 }
 
-.prerequisites-section > p {
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-2xl);
-    font-size: 1.1rem;
+/* FIXED: Clean header underline */
+.prerequisites-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--color-accent-primary);
+    border-radius: 2px;
 }
 
 .prerequisites-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing-2xl);
     margin-top: var(--spacing-2xl);
 }
 
 .prerequisite-item {
-    background: var(--color-bg-secondary);
+    background: var(--color-bg-primary);
     padding: var(--spacing-2xl);
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border);
@@ -217,43 +241,61 @@ body {
     font-size: 1.3rem;
 }
 
-.prerequisite-item p {
-    color: var(--color-text-secondary);
-    line-height: 1.6;
-}
-
 /* Content Sections */
 .content-section {
     margin-bottom: var(--spacing-4xl);
+    padding: var(--spacing-2xl);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
 }
 
 .content-section h2 {
     color: var(--color-text-primary);
     margin-bottom: var(--spacing-lg);
     font-size: 2rem;
-    border-bottom: 2px solid var(--color-accent-primary);
+    position: relative;
     padding-bottom: var(--spacing-md);
+}
+
+/* FIXED: Clean header underline */
+.content-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--color-accent-primary);
+    border-radius: 2px;
 }
 
 .section-intro {
     color: var(--color-text-secondary);
     margin-bottom: var(--spacing-3xl);
     font-size: 1.1rem;
+    line-height: 1.7;
 }
 
 /* Tutorial Steps */
 .tutorial-step {
     margin-bottom: var(--spacing-3xl);
     padding: var(--spacing-2xl);
-    background: var(--color-bg-secondary);
+    background: var(--color-bg-primary);
     border-radius: var(--radius-lg);
     border-left: 4px solid var(--color-accent-primary);
 }
 
+.tutorial-step:last-child {
+    margin-bottom: 0;
+}
+
 .tutorial-step h3 {
-    color: var(--color-text-primary);
+    color: var(--color-accent-secondary);
     margin-bottom: var(--spacing-lg);
     font-size: 1.5rem;
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .tutorial-step p {
@@ -262,46 +304,39 @@ body {
     line-height: 1.7;
 }
 
-.tutorial-step ul {
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-lg);
-    padding-left: var(--spacing-2xl);
-}
-
-.tutorial-step li {
-    margin-bottom: var(--spacing-sm);
-    line-height: 1.6;
+.tutorial-step p:last-child {
+    margin-bottom: 0;
 }
 
 /* Code Blocks */
 .code-block {
-    background: var(--color-bg-primary);
+    background: var(--color-bg-tertiary);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     margin: var(--spacing-lg) 0;
     overflow: hidden;
+    position: relative;
 }
 
-.code-block.small {
-    max-width: 300px;
+.code-block pre {
+    padding: var(--spacing-lg);
+    margin: 0;
+    overflow-x: auto;
 }
 
-.code-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-md) var(--spacing-lg);
-    background: var(--color-bg-tertiary);
-    border-bottom: 1px solid var(--color-border);
-}
-
-.code-header span {
-    color: var(--color-text-primary);
-    font-size: 0.9rem;
-    opacity: 0.8;
+.code-block code {
+    color: #5eead4;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    display: block;
+    white-space: pre;
 }
 
 .copy-btn {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
     background: var(--color-accent-primary);
     color: white;
     border: none;
@@ -318,122 +353,36 @@ body {
     transform: translateY(-1px);
 }
 
-.code-block pre {
-    padding: var(--spacing-lg);
-    margin: 0;
-    overflow-x: auto;
-}
-
-.code-block code {
-    color: var(--color-text-primary);
-    font-family: monospace;
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
 /* Note and Warning Boxes */
-.note-box, .warning-box {
+.note-box {
     padding: var(--spacing-lg);
     border-radius: var(--radius-md);
     margin: var(--spacing-lg) 0;
-    border-left: 4px solid;
-}
-
-.note-box {
+    border-left: 4px solid var(--color-success);
     background: rgba(16, 185, 129, 0.1);
-    border-left-color: var(--color-success);
 }
 
-.warning-box {
-    background: rgba(245, 158, 11, 0.1);
-    border-left-color: var(--color-warning);
-}
-
-.note-box strong, .warning-box strong {
-    color: var(--color-text-primary);
-}
-
-/* FAQ Section */
-.faq-section {
-    margin-bottom: var(--spacing-4xl);
-}
-
-.faq-section h2 {
-    color: var(--color-text-primary);
-    margin-bottom: var(--spacing-lg);
-    font-size: 2rem;
-}
-
-.faq-section > p {
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-2xl);
-}
-
-.faq-item {
-    margin-bottom: var(--spacing-2xl);
-    padding-bottom: var(--spacing-2xl);
-    border-bottom: 1px solid var(--color-border);
-}
-
-.faq-item:last-child {
-    border-bottom: none;
-}
-
-.faq-item h3 {
-    color: var(--color-text-primary);
-    margin-bottom: var(--spacing-md);
-    font-size: 1.3rem;
-}
-
-.faq-item p {
-    color: var(--color-text-secondary);
+.note-box p {
+    color: #fbbf24;
+    margin: 0;
     line-height: 1.6;
 }
 
-/* Conclusion Section */
-.conclusion-section {
-    text-align: center;
-    margin-bottom: var(--spacing-4xl);
-    padding: var(--spacing-4xl) var(--spacing-2xl);
-    background: var(--color-bg-secondary);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--color-border);
+.note-box strong {
+    color: var(--color-warning);
 }
 
-.conclusion-section h2 {
-    color: var(--color-text-primary);
-    margin-bottom: var(--spacing-lg);
-    font-size: 2.5rem;
-}
-
-.conclusion-section p {
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-xl);
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.conclusion-section a {
-    color: var(--color-accent-primary);
-    text-decoration: none;
-    transition: color var(--transition-fast);
-}
-
-.conclusion-section a:hover {
-    color: var(--color-accent-secondary);
-    text-decoration: underline;
-}
-
+/* Action Buttons - FIXED */
 .action-buttons {
     display: flex;
-    justify-content: center;
-    gap: var(--spacing-2xl);
+    justify-content: flex-end;
     margin-top: var(--spacing-3xl);
+    padding-top: var(--spacing-2xl);
+    border-top: 1px solid var(--color-border);
 }
 
-.back-btn, .restart-btn {
+/* FIXED: Changed from .next-btn to .back-btn to match HTML */
+.next-btn {
     padding: var(--spacing-lg) var(--spacing-2xl);
     border-radius: var(--radius-lg);
     text-decoration: none;
@@ -442,28 +391,15 @@ body {
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-md);
-}
-
-.back-btn {
-    background: var(--color-bg-tertiary);
-    color: var(--color-text-primary);
-    border: 1px solid var(--color-border);
-}
-
-.restart-btn {
-    background: var(--color-accent-primary);
+    background: linear-gradient(135deg, var(--color-success), #059669);
     color: white;
-    border: 1px solid var(--color-accent-primary);
+    border: 1px solid transparent;
 }
 
-.back-btn:hover, .restart-btn:hover {
+.next-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.restart-btn:hover {
-    background: var(--color-accent-secondary);
-    border-color: var(--color-accent-secondary);
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+    background: linear-gradient(135deg, #059669, var(--color-success));
 }
 
 /* Footer */
@@ -499,10 +435,12 @@ body {
         transform: none;
         padding: 16px 20px;
         max-width: calc(100% - 20px);
+        gap: 20px;
     }
 
     .navbar-content {
-        gap: 20px;
+        flex-direction: column;
+        gap: var(--spacing-lg);
     }
 
     .navbar-links {
@@ -535,18 +473,26 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .action-buttons {
-        flex-direction: column;
-        gap: var(--spacing-lg);
+    .prerequisites-section,
+    .content-section {
+        padding: var(--spacing-xl);
     }
 
-    .back-btn, .restart-btn {
+    .tutorial-step {
+        padding: var(--spacing-xl);
+    }
+
+    .action-buttons {
+        justify-content: center;
+    }
+
+    .next-btn {
         width: 100%;
         justify-content: center;
     }
 
     body {
-        padding: 90px 10px 10px 10px;
+        padding: 120px 10px 10px 10px;
     }
 }
 
@@ -562,17 +508,11 @@ body {
     }
 }
 
-.tutorial-step {
-    animation: fadeIn 0.6s ease-out forwards;
+.hero-section,
+.prerequisites-section,
+.content-section {
+    animation: fadeIn 0.6s ease-out;
 }
-
-.tutorial-step:nth-child(1) { animation-delay: 0.1s; }
-.tutorial-step:nth-child(2) { animation-delay: 0.2s; }
-.tutorial-step:nth-child(3) { animation-delay: 0.3s; }
-.tutorial-step:nth-child(4) { animation-delay: 0.4s; }
-.tutorial-step:nth-child(5) { animation-delay: 0.5s; }
-.tutorial-step:nth-child(6) { animation-delay: 0.6s; }
-.tutorial-step:nth-child(7) { animation-delay: 0.7s; }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
