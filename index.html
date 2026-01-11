@@ -9,8 +9,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Doto:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional inline styles to lower the header section */
+        .section-header {
+            margin-top: 40px !important; /* Added margin to push it lower */
+        }
+        
+        .hero-description {
+            margin-top: 10px !important; /* Adjust spacing after header */
+        }
+        
+        /* If you want to lower everything after navbar */
+        .content-wrapper {
+            margin-top: 40px; /* Creates space after navbar */
+        }
+    </style>
 </head>
 <body>
+    <!-- Only ONE navbar -->
     <nav class="navbar">
         <div class="navbar-content">
             <div class="navbar-brand">
@@ -28,32 +44,35 @@
         </div>
     </nav>
 
-    <div class="section-header">
-        <div class="section-title">PROJECTS:</div>
-        <div class="filter-dropdown">
-            <select id="categoryFilter" onchange="filterProjects()">
-                <option value="all">All</option>
-                <option value="webview">Webview</option>
-                <option value="extension">Extension Bypass</option>
-                <option value="chromeos">ChromeOS</option>
-                <option value="mobile">Mobile</option>
-            </select>
+    <!-- Add a wrapper div for all content below navbar -->
+    <div class="content-wrapper">
+        <div class="section-header">
+            <div class="section-title">PROJECTS:</div>
+            <div class="filter-dropdown">
+                <select id="categoryFilter" onchange="filterProjects()">
+                    <option value="all">All</option>
+                    <option value="webview">Webview</option>
+                    <option value="extension">Extension Bypass</option>
+                    <option value="chromeos">ChromeOS</option>
+                    <option value="mobile">Mobile</option>
+                </select>
+            </div>
         </div>
+
+        <div class="hero-description">
+            From the community, for the community
+        </div>
+
+        <div class="projects-container" id="projectsContainer"></div>
+
+        <footer class="footer">
+            <p>"From the community, for the community."</p>
+            <p class="credits">
+                Style and CSS by <a href="https://github.com/crosbreaker" target="_blank">cros breaker</a> • 
+                by <a href="https://github.com/orbinx" target="_blank">Orbinx</a>
+            </p>
+        </footer>
     </div>
-
-    <div class="hero-description">
-        From the community, for the community
-    </div>
-
-    <div class="projects-container" id="projectsContainer"></div>
-
-    <footer class="footer">
-        <p>"From the community, for the community."</p>
-        <p class="credits">
-            Style and CSS by <a href="https://github.com/crosbreaker" target="_blank">cros breaker</a> • 
-            by <a href="https://github.com/orbinx" target="_blank">Orbinx</a>
-        </p>
-    </footer>
 
     <script>
         const projects = [
