@@ -10,23 +10,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Doto:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Additional inline styles to lower the header section */
         .section-header {
-            margin-top: 40px !important; /* Added margin to push it lower */
+            margin-top: 40px !important;
         }
         
         .hero-description {
-            margin-top: 10px !important; /* Adjust spacing after header */
+            margin-top: 10px !important;
         }
         
-        /* If you want to lower everything after navbar */
-        .content-wrapper {
-            margin-top: 40px; /* Creates space after navbar */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out forwards;
+            opacity: 0;
         }
+        
+        .fade-out {
+            animation: fadeOut 0.3s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+        
+        .filter-dropdown select {
+            transition: all 0.3s ease;
+        }
+        
+        .filter-dropdown select:focus {
+            transform: scale(1.02);
+        }
+        
+        .project-card {
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+        .project-card:nth-child(5) { animation-delay: 0.5s; }
+        .project-card:nth-child(6) { animation-delay: 0.6s; }
+        .project-card:nth-child(7) { animation-delay: 0.7s; }
+        .project-card:nth-child(8) { animation-delay: 0.8s; }
+        .project-card:nth-child(9) { animation-delay: 0.9s; }
+        .project-card:nth-child(10) { animation-delay: 1.0s; }
     </style>
 </head>
 <body>
-    <!-- Only ONE navbar -->
     <nav class="navbar">
         <div class="navbar-content">
             <div class="navbar-brand">
@@ -44,7 +92,6 @@
         </div>
     </nav>
 
-    <!-- Add a wrapper div for all content below navbar -->
     <div class="content-wrapper">
         <div class="section-header">
             <div class="section-title">PROJECTS:</div>
@@ -120,52 +167,115 @@
             }
         ];
 
+        let isAnimating = false;
+        let animationTimeout = null;
+
         function renderProjects(filteredProjects) {
             const container = document.getElementById('projectsContainer');
-            container.innerHTML = '';
+            
+            if (isAnimating) {
+                clearTimeout(animationTimeout);
+                container.querySelectorAll('.project-card').forEach(card => {
+                    card.classList.remove('fade-out');
+                });
+            }
+            
+            const existingCards = container.querySelectorAll('.project-card');
+            if (existingCards.length > 0) {
+                isAnimating = true;
+                
+                existingCards.forEach(card => {
+                    card.classList.add('fade-out');
+                });
+                
+                animationTimeout = setTimeout(() => {
+                    container.innerHTML = '';
+                    
+                    filteredProjects.forEach((project, index) => {
+                        const card = createProjectCard(project, index);
+                        container.appendChild(card);
+                        
+                        setTimeout(() => {
+                            card.classList.add('fade-in');
+                        }, 50 + (index * 100));
+                    });
+                    
+                    isAnimating = false;
+                }, 300);
+            } else {
+                container.innerHTML = '';
+                
+                filteredProjects.forEach((project, index) => {
+                    const card = createProjectCard(project, index);
+                    container.appendChild(card);
+                    
+                    setTimeout(() => {
+                        card.classList.add('fade-in');
+                    }, 100 + (index * 100));
+                });
+            }
+        }
 
-            filteredProjects.forEach(project => {
-                const card = document.createElement('div');
-                card.className = 'project-card';
-                card.onclick = () => window.open(project.url, '_blank');
-                
-                card.innerHTML = `
-                    <div class="project-icon">
+        function createProjectCard(project, index) {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.style.animationDelay = `${0.1 + (index * 0.1)}s`;
+            card.onclick = () => window.open(project.url, '_blank');
+            
+            card.innerHTML = `
+                <div class="project-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"/>
+                        <polyline points="8 6 2 12 8 18"/>
+                    </svg>
+                </div>
+                <div class="project-info">
+                    <div class="project-name">${project.name}</div>
+                    <div class="project-description">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="16 18 22 12 16 6"/>
-                            <polyline points="8 6 2 12 8 18"/>
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
                         </svg>
+                        ${project.description}
                     </div>
-                    <div class="project-info">
-                        <div class="project-name">${project.name}</div>
-                        <div class="project-description">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                            </svg>
-                            ${project.description}
-                        </div>
-                    </div>
-                `;
-                
-                container.appendChild(card);
-            });
+                </div>
+            `;
+            
+            return card;
         }
 
         function filterProjects() {
-            const filter = document.getElementById('categoryFilter').value;
+            const filter = document.getElementById('categoryFilter');
+            const selectedValue = filter.value;
             
-            if (filter === 'all') {
+            filter.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                filter.style.transform = 'scale(1)';
+            }, 150);
+            
+            if (selectedValue === 'all') {
                 renderProjects(projects);
             } else {
                 const filtered = projects.filter(p => 
-                    Array.isArray(p.category) ? p.category.includes(filter) : p.category === filter
+                    Array.isArray(p.category) ? p.category.includes(selectedValue) : p.category === selectedValue
                 );
                 renderProjects(filtered);
             }
         }
 
-        renderProjects(projects);
+        window.addEventListener('DOMContentLoaded', () => {
+            const dropdown = document.getElementById('categoryFilter');
+            dropdown.style.opacity = '0';
+            dropdown.style.transform = 'translateY(10px)';
+            
+            setTimeout(() => {
+                dropdown.style.transition = 'all 0.5s ease';
+                dropdown.style.opacity = '1';
+                dropdown.style.transform = 'translateY(0)';
+            }, 300);
+            
+            renderProjects(projects);
+        });
     </script>
 </body>
 </html>
