@@ -3,279 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orbinx</title>
-    <link rel="icon" href="assets/orbinxlogo.png">
+    <title>Omada Tutorial - Orbinx</title>
+    <link rel="icon" href="https://orbinx.pages.dev/assets/orbinxlogo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Doto:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .section-header {
-            margin-top: 40px !important;
-        }
-        
-        .hero-description {
-            margin-top: 10px !important;
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.5s ease-in-out forwards;
-            opacity: 0;
-        }
-        
-        .fade-out {
-            animation: fadeOut 0.3s ease-in-out forwards;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            to {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-        }
-        
-        .filter-dropdown select {
-            transition: all 0.3s ease;
-        }
-        
-        .filter-dropdown select:focus {
-            transform: scale(1.02);
-        }
-        
-        .project-card {
-            opacity: 0;
-            animation: fadeIn 0.5s ease forwards;
-        }
-        
-        .project-card:nth-child(1) { animation-delay: 0.1s; }
-        .project-card:nth-child(2) { animation-delay: 0.2s; }
-        .project-card:nth-child(3) { animation-delay: 0.3s; }
-        .project-card:nth-child(4) { animation-delay: 0.4s; }
-        .project-card:nth-child(5) { animation-delay: 0.5s; }
-        .project-card:nth-child(6) { animation-delay: 0.6s; }
-        .project-card:nth-child(7) { animation-delay: 0.7s; }
-        .project-card:nth-child(8) { animation-delay: 0.8s; }
-        .project-card:nth-child(9) { animation-delay: 0.9s; }
-        .project-card:nth-child(10) { animation-delay: 1.0s; }
-    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="navbar-content">
             <div class="navbar-brand">
-                <img src="assets/orbinxlogo.png" alt="Orbinx Logo" class="navbar-logo">
-                <span class="navbar-brand-text">Orbinx</span>
+                <img src="https://orbinx.pages.dev/assets/orbinxlogo.png" alt="Orbinx Logo" class="navbar-logo">
+                <span class="navbar-brand-text">Omada Tutorial</span>
             </div>
             <div class="navbar-links">
-                <a href="https://github.com" target="_blank" class="navbar-item">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    GitHub
-                </a>
+                <a href="https://orbinx.pages.dev" class="navbar-item">Main Site</a>
             </div>
         </div>
     </nav>
 
-    <div class="content-wrapper">
-        <div class="section-header">
-            <div class="section-title">PROJECTS:</div>
-            <div class="filter-dropdown">
-                <select id="categoryFilter" onchange="filterProjects()">
-                    <option value="all">All</option>
-                    <option value="webview">Webview</option>
-                    <option value="extension">Extension Bypass</option>
-                    <option value="chromeos">ChromeOS</option>
-                    <option value="mobile">Mobile</option>
-                </select>
+    <main class="tutorial-container">
+        <section class="hero-section">
+            <h1 class="tutorial-title">Omada VPN</h1>
+            <p class="tutorial-subtitle">Omada VPN is just <a href="https://omada.orbinx.pages.dev" class="next-btn">Omada DNS</a> but hides your ip and blocks school enforced extensions.</p>
+            <div class="meta-info">
+                <span class="meta-item">ChromeOS 143+</span>
             </div>
-        </div>
+        </section>
 
-        <div class="hero-description">
-            From the community, for the community
-        </div>
+        <section class="prerequisites-section">
+            <h2>What You'll Need</h2>            
+            <div class="prerequisites-grid">
+                <div class="prerequisite-item">
+                    <h3>a brain</h3>
+                    <h3>chromebook with the built in VPN</h3>
+                </div>
+            </div>
+        </section>
 
-        <div class="projects-container" id="projectsContainer"></div>
+        <section class="content-section" id="tutorial">
+            <h2>Omada VPN Guide</h2>
+            <p class="section-intro">Follow these steps in order. Take your time and read each step carefully before proceeding.</p>
+            
+            <article class="tutorial-step">
+                <h3>Step 1: Log out</h3>
+                <p>Second, click apps and click Riverside Data Manager</p>
+                <p>Third, Click "More Login" or something like that</p>
+                <p>Fourth, click on Classlink SSO</p>
+                <p>Fifth, Click Login Here</p>
+                <p>Click the Windows Icon</p>
+                <p>Click Sign-In Options</p>
+                <p>Then Click Sign in with Github</p>
+                <p>Click Docs</p>
+                <p>Scroll down then click "Ask the Github Community"</p>
+                <p>Go on the search and search up</p>
+                <p>search "www.google.com"</p>
+                </div>
+                <h3>Profit!</h3>
+                <div class="note-box">
+                </div>
+            </article>
 
-        <footer class="footer">
-            <p>"From the community, for the community."</p>
-            <p class="credits">
-                Style and CSS by <a href="https://github.com/crosbreaker" target="_blank">cros breaker</a> • 
-                by <a href="https://github.com/orbinx" target="_blank">Orbinx</a>
-                v.1
-            </p>
-        </footer>
-    </div>
+            <div class="action-buttons">
+                <a href="https://quicksilver.orbinx.pages.dev" class="next-btn">Next: Quicksilver</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="tutorial-footer">
+        <p>Tutorial by <a href="https://discord.com/invite/crosbreaker-1375357349425971231" target="_blank">crosbreaker Discord Community</a></p>
+        <p class="footer-note">"From the community, for the community."</p>
+    </footer>
 
     <script>
-        const projects = [
-            {
-                id: 1,
-                name: "badsh1mmer",
-                description: "This project attempts to port a few utilities from sh1mmer into a standard recovery image. (crosbreaker.dev)",
-                url: "https://github.com/crosbreaker/badsh1mmer",
-                category: "chromeos"
-            },
-            {
-                id: 2,
-                name: "skiovox-141",
-                description: "The skiovox exploit for ChromeOS version 141 (crosbreaker.dev)",
-                url: "https://github.com/crosbreaker/skiovox-141",
-                category: "chromeos"
-            },
-            {
-                id: 3,
-                name: "sh1ttyOOBE",
-                description: "Unenrollment until next powerwash on 135-137 (crosbreaker.dev)",
-                url: "https://github.com/crosbreaker/sh1ttyoobe",
-                category: "chromeos"
-            },
-            {
-                id: 4,
-                name: "Omada DNS",
-                description: "Omada DNS breaks lightspeed, securly, goguardian and more and stops ChromeOS Updates (omada.cafe) works 145+",
-                url: "https://omada.orbinx.pages.dev",
-                category: ["chromeos", "extension"]
-            },
-            {
-                id: 5,
-                name: "Omada VPN",
-                description: "Omada VPN uses the built in chromebook VPN with the Omada DNS Network settings. (omada.cafe crosbreaker.dev crosbreaker community exploits)",
-                url: "https://omadavpn.orbnix.pages.dev/",
-                category: ["chromeos", "extension"]
-            },
-            {
-                id: 6,
-                name: "Riverside Data Manager Webview",
-                description: "This webview works only if you have The Riverside data manager app. (Titanium Network Community)",
-                url: "https://riverside.orbinx.pages.dev/",
-                category: "webview"
-            }
-        ];
+        function copyCode(button) {
+            const codeBlock = button.closest('.code-block');
+            const code = codeBlock.querySelector('code').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
 
-        let isAnimating = false;
-        let animationTimeout = null;
-
-        function renderProjects(filteredProjects) {
-            const container = document.getElementById('projectsContainer');
-            
-            if (isAnimating) {
-                clearTimeout(animationTimeout);
-                container.querySelectorAll('.project-card').forEach(card => {
-                    card.classList.remove('fade-out');
-                });
-            }
-            
-            const existingCards = container.querySelectorAll('.project-card');
-            if (existingCards.length > 0) {
-                isAnimating = true;
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
                 
-                existingCards.forEach(card => {
-                    card.classList.add('fade-out');
-                });
-                
-                animationTimeout = setTimeout(() => {
-                    container.innerHTML = '';
-                    
-                    filteredProjects.forEach((project, index) => {
-                        const card = createProjectCard(project, index);
-                        container.appendChild(card);
-                        
-                        setTimeout(() => {
-                            card.classList.add('fade-in');
-                        }, 50 + (index * 100));
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
                     });
-                    
-                    isAnimating = false;
-                }, 300);
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
             } else {
-                container.innerHTML = '';
-                
-                filteredProjects.forEach((project, index) => {
-                    const card = createProjectCard(project, index);
-                    container.appendChild(card);
-                    
-                    setTimeout(() => {
-                        card.classList.add('fade-in');
-                    }, 100 + (index * 100));
-                });
+                navbar.style.background = 'rgba(15, 23, 42, 0.85)';
+                navbar.style.backdropFilter = 'blur(5px)';
             }
-        }
-
-        function createProjectCard(project, index) {
-            const card = document.createElement('div');
-            card.className = 'project-card';
-            card.style.animationDelay = `${0.1 + (index * 0.1)}s`;
-            card.onclick = () => window.open(project.url, '_blank');
-            
-            card.innerHTML = `
-                <div class="project-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="16 18 22 12 16 6"/>
-                        <polyline points="8 6 2 12 8 18"/>
-                    </svg>
-                </div>
-                <div class="project-info">
-                    <div class="project-name">${project.name}</div>
-                    <div class="project-description">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                            <polyline points="14 2 14 8 20 8"/>
-                        </svg>
-                        ${project.description}
-                    </div>
-                </div>
-            `;
-            
-            return card;
-        }
-
-        function filterProjects() {
-            const filter = document.getElementById('categoryFilter');
-            const selectedValue = filter.value;
-            
-            filter.style.transform = 'scale(0.98)';
-            setTimeout(() => {
-                filter.style.transform = 'scale(1)';
-            }, 150);
-            
-            if (selectedValue === 'all') {
-                renderProjects(projects);
-            } else {
-                const filtered = projects.filter(p => 
-                    Array.isArray(p.category) ? p.category.includes(selectedValue) : p.category === selectedValue
-                );
-                renderProjects(filtered);
-            }
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const dropdown = document.getElementById('categoryFilter');
-            dropdown.style.opacity = '0';
-            dropdown.style.transform = 'translateY(10px)';
-            
-            setTimeout(() => {
-                dropdown.style.transition = 'all 0.5s ease';
-                dropdown.style.opacity = '1';
-                dropdown.style.transform = 'translateY(0)';
-            }, 300);
-            
-            renderProjects(projects);
         });
     </script>
 </body>
