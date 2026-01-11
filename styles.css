@@ -325,7 +325,7 @@ body {
 }
 
 .code-block code {
-    color: #5eead4;
+    color: #5e78ea;
     font-family: 'Courier New', monospace;
     font-size: 0.95rem;
     line-height: 1.5;
@@ -363,7 +363,7 @@ body {
 }
 
 .note-box p {
-    color: #fbbf24;
+    color: #246ffb;
     margin: 0;
     line-height: 1.6;
 }
@@ -399,7 +399,7 @@ body {
 .next-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
-    background: linear-gradient(135deg, #059669, var(--color-success));
+    background: linear-gradient(135deg, #053896, var(--color-success));
 }
 
 /* Footer */
