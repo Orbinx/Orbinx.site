@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omada Tutorial - Orbinx</title>
+    <title>Quicksilver Tutorial - Orbinx</title>
     <link rel="icon" href="https://orbinx.pages.dev/assets/orbinxlogo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
         <div class="navbar-content">
             <div class="navbar-brand">
                 <img src="https://orbinx.pages.dev/assets/orbinxlogo.png" alt="Orbinx Logo" class="navbar-logo">
-                <span class="navbar-brand-text">Omada Tutorial</span>
+                <span class="navbar-brand-text">Quicksilver Tutorial</span>
             </div>
             <div class="navbar-links">
                 <a href="https://orbinx.pages.dev" class="navbar-item">Main Site</a>
@@ -25,10 +25,10 @@
 
     <main class="tutorial-container">
         <section class="hero-section">
-            <h1 class="tutorial-title">Omada VPN</h1>
-            <p class="tutorial-subtitle">Omada VPN is just <a href="https://omada.orbinx.pages.dev" class="next-btn">Omada DNS</a> but hides your ip and blocks school enforced extensions.</p>
+            <h1 class="tutorial-title">Quicksilver</h1>
+            <p class="tutorial-subtitle"> unenrollment from v125 - v142 (kv4 - kv6)</p>
             <div class="meta-info">
-                <span class="meta-item">ChromeOS 143+</span>
+                <span class="meta-item">ChromeOS 142+</span>
             </div>
         </section>
 
@@ -37,31 +37,23 @@
             <div class="prerequisites-grid">
                 <div class="prerequisite-item">
                     <h3>a brain</h3>
-                    <h3>chromebook with the built in VPN</h3>
+                    <h3>chromebook with v125-142 & kv4-kv6</h3>
                 </div>
             </div>
         </section>
 
         <section class="content-section" id="tutorial">
-            <h2>Omada VPN Guide</h2>
+            <h2>Quicksilver Guide</h2>
             <p class="section-intro">Follow these steps in order. Take your time and read each step carefully before proceeding.</p>
             
             <article class="tutorial-step">
-                <h3>Step 1: Log out</h3>
-                <p>Second, click apps and click Riverside Data Manager</p>
-                <p>Third, Click "More Login" or something like that</p>
-                <p>Fourth, click on Classlink SSO</p>
-                <p>Fifth, Click Login Here</p>
-                <p>Click the Windows Icon</p>
-                <p>Click Sign-In Options</p>
-                <p>Then Click Sign in with Github</p>
-                <p>Click Docs</p>
-                <p>Scroll down then click "Ask the Github Community"</p>
-                <p>Go on the search and search up</p>
-                <p>search "www.google.com"</p>
+                <h3>Boot SH1MMER (make sure the version is from at least December 15th 2025)</h3>
+                <p>Open the payloads menu and run the quicksilver payload</p>
+                <p>Go through setup, you should be unenrolled!!</p>
                 </div>
                 <h3>Profit!</h3>
                 <div class="note-box">
+                    <p><strong>Note:</strong>if your version is from before December 15th 2025, run this command in the bash shell: vpd -i RW_VPD -s re_enrollment_key="$(openssl rand -hex 32)". it will say unable to write 'random state', ignore this</p>
                 </div>
             </article>
 
