@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sh1ttyOOBE Tutorial - Orbinx</title>
+    <title>badsh1mmer Tutorial - Orbinx</title>
     <link rel="icon" href="https://orbinx.pages.dev/assets/orbinxlogo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
         <div class="navbar-content">
             <div class="navbar-brand">
                 <img src="https://orbinx.pages.dev/assets/orbinxlogo.png" alt="Orbinx Logo" class="navbar-logo">
-                <span class="navbar-brand-text">Sh1ttyOOBE Tutorial</span>
+                <span class="navbar-brand-text">badsh1mmer Tutorial</span>
             </div>
             <div class="navbar-links">
                 <a href="https://orbinx.pages.dev" class="navbar-item">Main Site</a>
@@ -25,7 +25,7 @@
 
     <main class="tutorial-container">
         <section class="hero-section">
-            <h1 class="tutorial-title">Sh1ttyOOBE</h1>
+            <h1 class="tutorial-title">badsh1mmer</h1>
             <p class="tutorial-subtitle">Unenrollment until next powerwash on 135-137</p>
             <div class="meta-info">
                 <span class="meta-item">ChromeOS 137+</span>
@@ -43,15 +43,24 @@
         </section>
 
         <section class="content-section" id="tutorial">
-            <h2>Sh1ttyOOBE Guide</h2>
-            <p class="section-intro">Sh1ttyOOBE exploit for ChromeOS version 135-137</p>
+            <h2>badsh1mmer Guide</h2>
+            <p class="section-intro">This project attempts to port a few utilities from sh1mmer into a standard recovery image.</p>
             
             <article class="tutorial-step">
-                <h3>Powerwash your Chromebook</h3>
-                <p>On the "welcome to your Chromebook" screen, wait until you see the quick setup with Android button (DO NOT PRESS GET STARTED IF IT DOESN'T SHOW IMMEDIATELY), once it appears, press the button</p>
-                <p>Hit CTRL+ALT+SHIFT+R and click "cancel"</p>
-                <p>Click "Enter your Google account email and password." It should say to connect to a network</p>
-                <p>Open quick settings from the bottom right and connect to a network</p>
+                <h3>1. Automatic Script</h3>
+                <div class="code-block">
+                    <pre><code>git clone https://github.com/crosbreaker/badsh1mmer
+cd badsh1mmer
+bash buildfull_badsh1mmer.sh <board></code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
+                <div class="code-block">
+                    <pre><code>git clone https://github.com/crosbreaker/badsh1mmer
+cd badsh1mmer
+bash update_downloader.sh <board>
+sudo ./build_badrecovery.sh -i image.bin -t unverified</code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
                 </div>
                 <h3>Profit!</h3>
                 <div class="note-box">
