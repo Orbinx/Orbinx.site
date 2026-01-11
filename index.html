@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quicksilver Tutorial - Orbinx</title>
+    <title>Skiovox Tutorial - Orbinx</title>
     <link rel="icon" href="https://orbinx.pages.dev/assets/orbinxlogo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
         <div class="navbar-content">
             <div class="navbar-brand">
                 <img src="https://orbinx.pages.dev/assets/orbinxlogo.png" alt="Orbinx Logo" class="navbar-logo">
-                <span class="navbar-brand-text">Quicksilver Tutorial</span>
+                <span class="navbar-brand-text">Skiovox Tutorial</span>
             </div>
             <div class="navbar-links">
                 <a href="https://orbinx.pages.dev" class="navbar-item">Main Site</a>
@@ -25,10 +25,10 @@
 
     <main class="tutorial-container">
         <section class="hero-section">
-            <h1 class="tutorial-title">Quicksilver</h1>
+            <h1 class="tutorial-title">Skiovox</h1>
             <p class="tutorial-subtitle"> unenrollment from v125 - v142 (kv4 - kv6)</p>
             <div class="meta-info">
-                <span class="meta-item">ChromeOS 142+</span>
+                <span class="meta-item">ChromeOS any current version</span>
             </div>
         </section>
 
@@ -37,19 +37,27 @@
             <div class="prerequisites-grid">
                 <div class="prerequisite-item">
                     <h3>a brain</h3>
-                    <h3>chromebook with v125-142 & kv4-kv6</h3>
+                    <h3>chromebook wtih apps</h3>
                 </div>
             </div>
         </section>
 
         <section class="content-section" id="tutorial">
-            <h2>Quicksilver Guide</h2>
-            <p class="section-intro">Follow these steps in order. Take your time and read each step carefully before proceeding.</p>
+            <h2>Skiovox Guide</h2>
+            <p class="section-intro">The Skiovox exploit for ChromeOS version 142+</p>
             
             <article class="tutorial-step">
-                <h3>Boot SH1MMER (make sure the version is from at least December 15th 2025)</h3>
-                <p>Open the payloads menu and run the quicksilver payload</p>
-                <p>Go through setup, you should be unenrolled!!</p>
+                <h3>Find a website kiosk (one that shows the url while its loading.)</h3>
+                <p>Find some way to navigate away from the main page and to a search engine, like google.</p>
+                <p>after getting on google (or any search engine) find some sort of text field, most likely the search bar.</p>
+                <p>in the text field type the following HTML then copy it</p>
+                <div class="code-block">
+                    <pre><code> <script>window.open("javascript:alert();");</script> </code></pre>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
+                <p>Now go to</p>
+                <a href="https://htmledit.squarefree.com/" class="next-btn">html editor</a>
+                <p>Paste the HTML you copied and it should open a chrome window.</p>
                 </div>
                 <h3>Profit!</h3>
                 <div class="note-box">
@@ -58,7 +66,7 @@
             </article>
 
             <div class="action-buttons">
-                <a href="https://quicksilver.orbinx.pages.dev" class="next-btn">Next: Quicksilver</a>
+                <a href="https://sh1ttyoobe.orbinx.pages.dev" class="next-btn">Next: Sh1ttyOOBE</a>
             </div>
         </section>
     </main>
