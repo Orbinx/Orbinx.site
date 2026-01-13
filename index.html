@@ -94,11 +94,12 @@
 
     <div class="content-wrapper">
         <div class="section-header">
-            <div class="section-title">PROJECTS:</div>
+            <div class="section-title">Community Made Projects:</div>
             <div class="filter-dropdown">
                 <select id="categoryFilter" onchange="filterProjects()">
                     <option value="all">All</option>
                     <option value="webview">Webview</option>
+                    <option value="proxy">Proxy</option>
                     <option value="extension">Extension Bypass</option>
                     <option value="chromeos">ChromeOS</option>
                     <option value="mobile">Mobile</option>
@@ -107,7 +108,7 @@
         </div>
 
         <div class="hero-description">
-            From the community, for the community
+        Orbinx is community found exploits/methods to unblock or to have freedom on your school chromebook!1!!1! (BETA V.4.2 Dev)
         </div>
 
         <div class="projects-container" id="projectsContainer"></div>
@@ -116,8 +117,7 @@
             <p>"From the community, for the community."</p>
             <p class="credits">
                 Style and CSS by <a href="https://github.com/crosbreaker" target="_blank">cros breaker</a> • 
-                by <a href="https://github.com/orbinx" target="_blank">Orbinx</a>
-                v.1
+                by <a href="https://github.com/orbinx" target="_blank">Orbinx</a> - v.4.2
             </p>
         </footer>
     </div>
@@ -128,21 +128,21 @@
                 id: 1,
                 name: "badsh1mmer",
                 description: "This project attempts to port a few utilities from sh1mmer into a standard recovery image. (crosbreaker.dev)",
-                url: "https://github.com/crosbreaker/badsh1mmer",
+                url: "https://badsh1mmer.orbinx.pages.dev/",
                 category: "chromeos"
             },
             {
                 id: 2,
-                name: "skiovox",
+                name: "skiovox-141",
                 description: "The skiovox exploit for ChromeOS version 141 (crosbreaker.dev)",
                 url: "https://skiovox.orbinx.pages.dev/",
-                category: "webview"
+                category: "chromeos"
             },
             {
                 id: 3,
                 name: "sh1ttyOOBE",
                 description: "Unenrollment until next powerwash on 135-137 (crosbreaker.dev)",
-                url: "https://github.com/crosbreaker/sh1ttyoobe",
+                url: "https://sh1ttyoobe.orbinx.pages.dev/",
                 category: "chromeos"
             },
             {
@@ -156,7 +156,7 @@
                 id: 5,
                 name: "Omada VPN",
                 description: "Omada VPN uses the built in chromebook VPN with the Omada DNS Network settings. (omada.cafe crosbreaker.dev crosbreaker community exploits)",
-                url: "https://omadavpn.orbnix.pages.dev/",
+                url: "https://omadavpn.orbinx.pages.dev/",
                 category: ["chromeos", "extension"]
             },
             {
@@ -169,10 +169,24 @@
             {
                 id: 7,
                 name: "Quicksilver",
-                description: "Quicksilver - unenrollment from v125 - v142 (kv4 - kv6) (Titanium Network Community)",
+                description: "Quicksilver - unenrollment from v125 - v142 (kv4 - kv6) (crosbreaker.dev)",
                 url: "https://quicksilver.orbinx.pages.dev/",
-                category: "chromeos"
-            }
+                category: "ChromeOS"
+            },
+            {
+                id: 8,
+                name: "TestNav Skiovox Webview",
+                description: "Just another webview but with Testnav and uses skiovox",
+                url: "https://testnav.orbinx.pages.dev/",
+                category: ["ChromeOS", "webview"]
+            },
+            {
+                id: 8,
+                name: "CodeHSProxy",
+                description: "exploiting CodeHS in a way that you're not supposed to lol.",
+                url: "https://codehsproxy.orbinx.pages.dev/",
+                category: ["proxy", "webview"]
+            },
         ];
 
         let isAnimating = false;
